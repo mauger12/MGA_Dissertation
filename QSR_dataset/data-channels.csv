@@ -1,0 +1,56 @@
+organizationName,uuId,dataChannelId,channelName,displayedPhase
+QSR1,0CCD0001,59668,Main supply,system
+QSR1,0CCD0002,59670,Center Island,system
+QSR1,0CCD0003,59669,Dryer 1,1
+QSR1,0CCD0003,59676,Dryer 2 and 3,2
+QSR1,0CCD0003,59677,Dryer 4 and 5,3
+QSR1,0CCD0004,59671,Fryer,system
+QSR1,0CCD0005,59672,Air Cond Rest,system
+QSR1,0CCD0006,59673,Air Con Kitchen,system
+QSR1,0CCD0007,59674,Frezzer out,system
+QSR1,0CCD0008,59675,Cold Room,1
+QSR1,0CCD0008,59678,Meat Chiller,2
+QSR1,0CCD0008,59679,Frezzer,3
+QSR1,E00F0001,61503,Breakfast Oven x2,system
+QSR1,E00F0002,61505,Signage DB,system
+QSR1,E00F0003,61506,Staff DB,system
+QSR1,E00F0004,61504,Extract Fan,1
+QSR1,E00F0004,61511,Supply Fan,3
+QSR1,E00F0004,61512,Chip Dump,2
+QSR1,E00F0005,61507,1st Floor AC 3,1
+QSR1,E00F0005,61513,1st Floor AC 1/1ST Floor AC 4,2
+QSR1,E00F0005,61514,1st Floor AC 2,3
+QSR1,E00F0006,61508,Order Under Fridge,1
+QSR1,E00F0006,61515,Order High Fridge,2
+QSR1,E00F0006,61516,Water Heater x2,3
+QSR1,E00F0007,61510,Milk Cooler,1
+QSR1,E00F0007,61517,Breading Table 1,2
+QSR1,E00F0007,61518,Breading Table 2,3
+QSR1,E00F0008,61509,Lighting,system
+QSR2,45EC0001,66982,Main Incoming - 1F,system
+QSR2,45EC0002,66983,Aircond - 1F,system
+QSR2,45EC0003,66984,Cool Room - 1F,system
+QSR2,45EC0004,66985,Lighting - 1F,system
+QSR2,45EC0005,66986,Power - 1F,system
+QSR2,45EC0006,66987,A/C Front - 1F,system
+QSR2,45EC0007,66988,A/C Behind - 1F,system
+QSR2,8D900001,66974,Main Incoming - GF,system
+QSR2,8D900002,66975,Aircond - GF ,system
+QSR2,8D900003,66976,Cool Room - GF,system
+QSR2,8D900004,66977,Ventilation - GF,system
+QSR2,8D900005,66978,Power - GF,system
+QSR2,8D900006,66979,Kitchen - GF,system
+QSR2,8D900007,66980,A/C Kitchen - GF (10HP),system
+QSR2,8D900008,66981,A/C Dining - GF (6HP),system
+QSR3,4.66E+03,67040,Incoming - 1F,system
+QSR3,4.66E+04,67041,Aircond - 1F,system
+QSR3,4.66E+05,67042,Power - 1F,system
+QSR3,4.66E+06,67043,Lighting - 1F,system
+QSR3,74700001,67030,Incoming - G,system
+QSR3,74700002,67031,Power - G,system
+QSR3,74700003,67032,Aircond - G,system
+QSR3,74700004,67033,Cool Room - G,system
+QSR3,74700005,67034,Ventilation fan - G,system
+QSR3,74700006,67036,Heating Element - G,system
+QSR3,74700007,67037,Lighting for Dining -G,system
+QSR3,74700008,67038,Lighting for Kitchen -G,system
