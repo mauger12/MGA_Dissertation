@@ -26,7 +26,7 @@ detect change points
 ===================================================================
 analyse data generated
     compare time, location, variable, etc
-    what patterns emerge hhh
+    what patterns emerge
     what can be seen on graphs
 
 """
