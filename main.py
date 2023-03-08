@@ -35,8 +35,8 @@ import matplotlib.pyplot as plt
 import ruptures as rpt
 
 
-def load_single_dataset(path):
-    df = pd.read_csv(path)
+def load_signal(path_):
+    df = pd.read_csv(path_)
     plt.plot(df['time'], df['value'])
     plt.show()
     return df['value'].values
@@ -57,7 +57,52 @@ def offline_cpd(signal):
     plt.show()
 
 
+def generate_signal(shift):
+    # creation of data
+    n, dim = 500, 1  # number of samples, dimension
+    n_bkps, sigma = 3, 1  # number of change points, noise standard deviation
+
+    match shift:
+        case 'mean':
+            signal, bkps = rpt.pw_constant(n, dim, n_bkps, noise_std=sigma, delta=(1, 10))
+        case 'correlation':
+            signal, bkps = rpt.pw_normal(n, n_bkps)
+        case 'linear':
+            signal, bkps = rpt.pw_linear(n, dim, n_bkps, noise_std=sigma)
+        case 'frequency':
+            signal, bkps = rpt.pw_wavy(n, n_bkps, noise_std=sigma)
+        case _:
+            print('no shift specified')
+            quit()
+
+    rpt.display(signal, bkps)
+    plt.show()
+    return signal, bkps
+
+
+def pelt(signal, cost):
+    # change point detection
+    model = "rbf"  # "l2", "rbf"
+    algo = rpt.Pelt(model=model, min_size=3, jump=5).fit(signal)
+    my_bkps = algo.predict(pen=3)
+    return my_bkps
+
+
+def binary_segmentation(signal):
+    return 0
+
+
+def window_based_detection(signal):
+    return 0
+
+
 if __name__ == '__main__':
     path = 'data1.csv'  # 'QSR_dataset\\QSR3\\466e\\466e0001-20200220-20200712-60Min-analytics.csv'
-    data = load_single_dataset(path)
-    offline_cpd(data)
+    # data = load_signal(path)
+    # offline_cpd(data)
+    data, true_bkps = generate_signal('mean')
+    bkps = pelt(data, 'l1')
+
+    # show results
+    rpt.display(data, true_bkps, bkps)
+    plt.show()
