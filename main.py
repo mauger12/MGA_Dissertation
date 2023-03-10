@@ -37,9 +37,9 @@ import ruptures as rpt
 
 def load_signal(path_):
     df = pd.read_csv(path_)
-    plt.plot(df['time'], df['value'])
-    plt.show()
-    return df['value'].values
+    # plt.plot(df['time'], df['Nile'])
+    # plt.show()
+    return df['Nile'].values
 
 
 def offline_cpd(signal):
@@ -84,7 +84,7 @@ def pelt(signal, cost):
     # change point detection
     model = "rbf"  # "l2", "rbf"
     algo = rpt.Pelt(model=model, min_size=3, jump=5).fit(signal)
-    my_bkps = algo.predict(pen=3)
+    my_bkps = algo.predict(pen=1)
     return my_bkps
 
 
@@ -98,9 +98,9 @@ def window_based_detection(signal):
 
 if __name__ == '__main__':
     path = 'data1.csv'  # 'QSR_dataset\\QSR3\\466e\\466e0001-20200220-20200712-60Min-analytics.csv'
-    # data = load_signal(path)
+    data, true_bkps = load_signal('nile.csv'), []
     # offline_cpd(data)
-    data, true_bkps = generate_signal('mean')
+    # data, true_bkps = generate_signal('mean')
     bkps = pelt(data, 'l1')
 
     # show results
