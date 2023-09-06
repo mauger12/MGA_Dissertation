@@ -716,9 +716,9 @@ def get_batch_bkps(QSR, QSR_paths, param, method, pen=5, trunc=-10, cutoff=0.2, 
         label = 'OffBCD with truncation -600'
         for s in range(0, len(all_series[1])):
             path = out_path + '\\Offline_Bayesian\\' + str(s + 1) + label + '.png'
-            bkps.append(offline_bayesian(all_series[0][s], all_series[1][s], label, trunc, cutoff, graph, path))
+            bkps.append(offline_bayesian(all_series[0][s], all_series[1][s], '', trunc, cutoff, graph, path))
             print('#', end='')
-    # Bayesian offline
+    # Bayesian online
     elif method == 'on':
         label = 'OnBCD with params: ' + str(a) + ', ' + str(b) + ', ' + str(k) + ', ' + str(m) + ', ' + str(
             h) + ', ' + str(cutoff)
@@ -854,19 +854,21 @@ if __name__ == '__main__':
     QSR1_P_bkps = pd.DataFrame(columns=['rbf', 'rank'])
     QSR1_P_bkps['rbf'] = rbf_p_bkps
     QSR1_P_bkps['rank'] = rank_p_bkps
-    QSR1_P_bkps.to_csv('1P_offline_bkps.csv')
+    QSR1_P_bkps.to_csv('1P_offline_bkps.csv')"""
 
-    # off_pf_bkps = get_batch_bkps(3, QSR_paths, 'PF', 'off', trunc=-600, cutoff=0.5, graph=True)
+    off_pf_bkps = get_batch_bkps(1, QSR_paths, 'PF', 'off', trunc=-600, cutoff=0.15, graph=True)
+    # print(off_pf_bkps)
     # offline_bayesian(timestamps, signal, "help", -600, 0.5, True)
 
-    rbf_pf_bkps = get_batch_bkps(1, QSR_paths, 'PF', 'rbf', pen=8, graph=True)
+    """rbf_pf_bkps = get_batch_bkps(1, QSR_paths, 'PF', 'rbf', pen=8, graph=True)
     rank_pf_bkps = get_batch_bkps(1, QSR_paths, 'PF', 'rank', pen=15, graph=True)
     QSR1_PF_bkps = pd.DataFrame(columns=['rbf', 'rank'])
     QSR1_PF_bkps['rbf'] = rbf_pf_bkps
     QSR1_PF_bkps['rank'] = rank_pf_bkps
-    QSR1_PF_bkps.to_csv('1PF_offline_bkps.csv')
-    # QSR3_PF_bkps['offline'] = off_pf_bkps"""
+    QSR1_PF_bkps.to_csv('1PF_offline_bkps.csv')"""
+    # QSR3_PF_bkps['offline'] = off_pf_bkps
 
+    """
     P = pd.read_csv('P_offline_bkps.csv')
     PF = pd.read_csv('PF_offline_bkps.csv')
 
@@ -883,3 +885,4 @@ if __name__ == '__main__':
         print(channel + 1, b)
         print(channel + 1, set(a).intersection(set(b)))
         print()
+        """
